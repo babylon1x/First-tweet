@@ -30,14 +30,14 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           autoFocus
           disabled={isLoading}
           aria-label="X profile URL or username"
-          className="w-full px-4 py-3.5 rounded-full border border-neutral-300 bg-neutral-50 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent focus:bg-white text-base transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+          className="w-full px-4 py-3.5 rounded-full border border-neutral-800 bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-neutral-600 text-base transition-all disabled:opacity-60 disabled:cursor-not-allowed shadow-inner"
         />
       </div>
       <button
         type="submit"
         disabled={isLoading || !value.trim()}
         aria-label={isLoading ? "Fetching Timeline" : "Fetch Posts"}
-        className="px-7 py-3.5 rounded-full bg-neutral-900 hover:bg-neutral-800 active:bg-neutral-950 text-white font-medium text-base transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 shrink-0"
+        className="px-7 py-3.5 rounded-full bg-white hover:bg-neutral-200 active:bg-neutral-300 text-neutral-950 font-medium text-base transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-950 shrink-0 shadow-md"
       >
         {isLoading ? "Fetching Timeline..." : "Fetch Posts"}
       </button>

@@ -66,34 +66,34 @@ export const Timeline: React.FC<TimelineProps> = ({ profile, posts }) => {
   return (
     <div className="w-full flex flex-col gap-6 mt-4">
       {/* Timeline Header */}
-      <div className="p-6 rounded-xl border border-neutral-200 bg-neutral-50 flex flex-col gap-4">
+      <div className="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/80 backdrop-blur flex flex-col gap-4 shadow-xl">
         <div>
-          <h2 className="text-xl font-bold text-neutral-900">{profile.name}</h2>
-          <p className="text-sm text-neutral-500 font-mono">@{profile.username}</p>
+          <h2 className="text-xl font-bold text-white">{profile.name}</h2>
+          <p className="text-sm text-neutral-400 font-mono">@{profile.username}</p>
         </div>
 
-        <div className="grid grid-cols-3 gap-2 pt-4 border-t border-neutral-200 text-center sm:text-left">
+        <div className="grid grid-cols-3 gap-2 pt-4 border-t border-neutral-800 text-center sm:text-left">
           <div>
-            <span className="block text-xs text-neutral-500 font-medium uppercase tracking-wider">
+            <span className="block text-xs text-neutral-400 font-medium uppercase tracking-wider">
               Total Posts
             </span>
-            <span className="text-lg font-bold text-neutral-900">
+            <span className="text-lg font-bold text-white">
               {posts.length.toLocaleString()}
             </span>
           </div>
           <div>
-            <span className="block text-xs text-neutral-500 font-medium uppercase tracking-wider">
+            <span className="block text-xs text-neutral-400 font-medium uppercase tracking-wider">
               First Post
             </span>
-            <span className="text-sm font-semibold text-neutral-900">
+            <span className="text-sm font-semibold text-neutral-200">
               {firstPostDate}
             </span>
           </div>
           <div>
-            <span className="block text-xs text-neutral-500 font-medium uppercase tracking-wider">
+            <span className="block text-xs text-neutral-400 font-medium uppercase tracking-wider">
               Latest Post
             </span>
-            <span className="text-sm font-semibold text-neutral-900">
+            <span className="text-sm font-semibold text-neutral-200">
               {latestPostDate}
             </span>
           </div>
@@ -103,7 +103,7 @@ export const Timeline: React.FC<TimelineProps> = ({ profile, posts }) => {
       {/* Posts List */}
       <div className="flex flex-col gap-4">
         {posts.length === 0 ? (
-          <div className="p-8 text-center text-neutral-500 border border-dashed border-neutral-300 rounded-xl">
+          <div className="p-8 text-center text-neutral-400 border border-dashed border-neutral-800 rounded-2xl bg-neutral-900/50">
             No public posts found for this profile.
           </div>
         ) : (
@@ -115,7 +115,7 @@ export const Timeline: React.FC<TimelineProps> = ({ profile, posts }) => {
       {hasMore && (
         <div
           ref={observerRef}
-          className="py-6 text-center text-sm text-neutral-400 font-medium"
+          className="py-6 text-center text-sm text-neutral-500 font-medium"
         >
           Loading more posts... ({visibleCount} of {posts.length})
         </div>

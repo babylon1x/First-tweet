@@ -59,7 +59,6 @@ export default function HomePage() {
 
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split("\n");
-        // Keep the last incomplete fragment in the buffer
         buffer = lines.pop() || "";
 
         for (const line of lines) {
@@ -92,15 +91,15 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-neutral-100 flex flex-col items-center py-12 px-4 sm:px-6">
+    <main className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col items-center py-12 px-4 sm:px-6">
       <div className="w-full max-w-[760px] flex flex-col items-center gap-6">
         {/* Header Branding */}
         <header className="text-center flex flex-col gap-2">
-          <h1 className="text-4xl font-extrabold text-neutral-900 tracking-tight">
+          <h1 className="text-4xl font-extrabold text-white tracking-tight">
             FirstTweet
           </h1>
-          <p className="text-neutral-600 text-base max-w-md mx-auto">
-            Fetch and view any X profile&apos;s posts starting from their first-ever tweet.
+          <p className="text-neutral-400 text-base max-w-md mx-auto">
+            Scrape and view any X profile&apos;s posts starting from their first-ever tweet.
           </p>
         </header>
 
@@ -128,7 +127,7 @@ export default function HomePage() {
         {status === "error" && errorMessage && (
           <div
             role="alert"
-            className="w-full p-4 rounded-xl bg-neutral-200 border border-neutral-300 text-neutral-800 text-sm flex items-center justify-between"
+            className="w-full p-4 rounded-xl bg-neutral-900 border border-neutral-800 text-red-400 text-sm flex items-center justify-between shadow-lg"
           >
             <span>{errorMessage}</span>
           </div>
